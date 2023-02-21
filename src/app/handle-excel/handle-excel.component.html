@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutAlign="start center" class="update-upload">
+    <form id="updateFormHtml" fxLayout="row" fxLayoutAlign="center center" #updateForm="ngForm" (submit)="uploadFile()">
+    <div class="file-dropzone">
+      <label for="file" class="text">Click here or Drag and Drop file here</label>
+      <input id="file" type="file" accept=".json" (change)="setChosenFile($event)" />
+    </div>
+  </form>
+  <div *ngIf="chosenFileName" fxLayout="column" fxLayoutAlign="start center" class="file-info">
+    <div class="file-name">{{ chosenFileName }}</div>
+    <button form="updateFormHtml" mat-raised-button color="primary">Upload</button>
+  </div>
+</div>
